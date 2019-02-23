@@ -18,7 +18,10 @@ class FeedTableViewCell: UITableViewCell {
         
         hasBeenOpenedSquare = UIView(frame: CGRect(x: 20, y: 15, width: 30, height: 30))
         hasBeenOpenedSquare.layer.cornerRadius = 5
-        hasBeenOpenedSquare.backgroundColor = .red
+        let red = UIColor(red: 1, green: 0, blue: 0, alpha: 1.0)
+        hasBeenOpenedSquare.layer.borderColor = red.cgColor
+        hasBeenOpenedSquare.layer.borderWidth = CGFloat(bitPattern: 2)
+        //hasBeenOpenedSquare.backgroundColor = .red
         contentView.addSubview(hasBeenOpenedSquare)
         
         senderLabel = UILabel(frame: CGRect(x: 80, y: 5, width: contentView.frame.width - 80, height: 30))

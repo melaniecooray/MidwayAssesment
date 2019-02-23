@@ -22,9 +22,9 @@ class ShowImageVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @objc func done() {
-        performSegue(withIdentifier: "toFeedFromShowImage", sender: self)
-    }
+    //@objc func done() {
+    //    performSegue(withIdentifier: "toFeedFromShowImage", sender: self)
+    //}
  
 
 }

@@ -33,6 +33,11 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         cell.senderLabel.text = arrayOfSnaps[index].sender
         let date = formatter.string(from: arrayOfSnaps[index].timeSent)
         cell.dateSentLabel.text = "Sent on \(date)"
+        if arrayOfSnaps[index].opened {
+            cell.hasBeenOpenedSquare.backgroundColor = .white
+        } else {
+            cell.hasBeenOpenedSquare.backgroundColor = .red
+        }
         /* PART 2C FINISH*/
         return cell
     }
@@ -41,6 +46,7 @@ extension FeedVC: UITableViewDelegate, UITableViewDataSource {
         var index = indexPath[1]
         /* PART 2D START */
         selectedImage = arrayOfSnaps[index]
+        selectedImage.opened = true
         self.performSegue(withIdentifier: "toShowImage", sender: self)
         /* PART 2D FINISH */
     }
